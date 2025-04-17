@@ -18,6 +18,7 @@ const animalsOptions = {
 bot.on("message", async (msg) => {
     const text = msg.text;
     const chatId = msg.chat.id;
+    const reg = new RegExp("/^ [a-zA-Z\s]+$/")
     try {
         if (text === "/start") {
             await bot.sendMessage(chatId, "Bot ish boshladi", animalsOptions);
@@ -47,4 +48,4 @@ bot.on('callback_query', async (msg) => {
         await bot.sendMessage(chatId, "Iltimos 0 dan 99 gacha raqam kiriting");
     }
 
-})
+})  
